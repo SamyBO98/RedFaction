@@ -80,6 +80,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = 0f;
             }
+            if(m_Jumping == true)
+            {
+                m_Jump = false;
+            }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
