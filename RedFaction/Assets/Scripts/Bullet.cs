@@ -49,7 +49,7 @@ public class Bullet : MonoBehaviour
             fireRate = 0.5f;
         }
 
-        if (Input.GetKeyDown("r") && reserve != 0 && maxClip - clip <= reserve)
+        if (Input.GetKeyDown("r") && reserve != 0 && maxClip - clip <= reserve && clip != maxClip)
         {
             GetComponent<AudioSource>().PlayOneShot(reloadSound);
 
@@ -57,7 +57,7 @@ public class Bullet : MonoBehaviour
             clip += maxClip - clip;
         }
 
-        if (Input.GetKeyDown("r") && reserve != 0 && maxClip - clip > reserve)
+        if (Input.GetKeyDown("r") && reserve != 0 && maxClip - clip > reserve && clip!=maxClip)
         {
             GetComponent<AudioSource>().PlayOneShot(reloadSound);
             clip += reserve;
