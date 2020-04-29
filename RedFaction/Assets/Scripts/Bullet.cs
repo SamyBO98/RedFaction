@@ -12,8 +12,10 @@ public class Bullet : MonoBehaviour
     private bool fullAuto = false;
     public int clip;
     public int maxClip;
+    public int reserve;
     public AudioClip shotSound;
     public AudioClip reloadSound;
+    public bool munitionMax;
 
     void Update()
     {
@@ -26,6 +28,7 @@ public class Bullet : MonoBehaviour
                 fireCoolDown = Time.time + fireRate;
                 bullet = Instantiate(bulletCasing, transform.position, transform.rotation);
                 clip -= 1;
+                GetComponent<AudioSource>().PlayOneShot(shotSound);
                 bullet.velocity = transform.TransformDirection(Vector3.left * ejectSpeed);
             }
         }
@@ -44,14 +47,25 @@ public class Bullet : MonoBehaviour
             fireRate = 0.5f;
         }
 
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("r") && munitionMax == false)
         {
             clip += 30;
+            GetComponent<AudioSource>().PlayOneShot(reloadSound);
         }
 
         if(clip >= maxClip)
         {
             clip = 30;
+        }
+
+        if(clip >= 30)
+        {
+            munitionMax = true;
+        }
+
+        if(clip <= 29)
+        {
+            munitionMax = false;
         }
     }
 
@@ -60,6 +74,15 @@ public class Bullet : MonoBehaviour
         GUI.contentColor = Color.green;
         GUI.Box(new Rect(600, 10, 50, 30), new GUIContent("" +clip));
         GUI.skin.box.fontSize = 20;
+
+        if (fullAuto == true)
+        {
+            GUI.Box(new Rect(600, 50, 120, 30), new GUIContent("Full Auto ON"));
+        }
+        if(fullAuto == false)
+        {
+            GUI.Box(new Rect(600, 50, 130, 30), new GUIContent("Full Auto OFF"));
+        }
     }
 
 }
