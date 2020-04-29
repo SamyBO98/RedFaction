@@ -44,4 +44,11 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    private void OnGUI()
+    {
+        GUI.contentColor = Color.green;
+        GUI.Box(new Rect(600, 10, 50, 30), new GUIContent("" +clip));
+        GUI.skin.box.fontSize = 20;
+    }
+
 }
