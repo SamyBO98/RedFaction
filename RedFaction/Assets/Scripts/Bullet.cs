@@ -10,6 +10,9 @@ public class Bullet : MonoBehaviour
     public float fireRate = 0.5f;
     private float fireCoolDown = 0f;
     private bool fullAuto = false;
+    public int clip;
+    public AudioClip shotSound;
+    public AudioClip reloadSound;
 
     void Update()
     {
@@ -17,9 +20,13 @@ public class Bullet : MonoBehaviour
         //tirer sans coup par coup
         if(Input.GetButton("Fire1") && Time.time> fireCoolDown)
         {
-            fireCoolDown = Time.time + fireRate;
-            bullet = Instantiate(bulletCasing, transform.position, transform.rotation);
-            bullet.velocity = transform.TransformDirection(Vector3.left * ejectSpeed);
+            if (clip >= 1)
+            {
+                fireCoolDown = Time.time + fireRate;
+                bullet = Instantiate(bulletCasing, transform.position, transform.rotation);
+                clip -= 1;
+                bullet.velocity = transform.TransformDirection(Vector3.left * ejectSpeed);
+            }
         }
 
         if (Input.GetKeyDown("v"))
