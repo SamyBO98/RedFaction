@@ -19,7 +19,13 @@ public class Bullet : MonoBehaviour
     public AudioClip silenceSound;
     public bool munitionMax;
     public bool silence;
+    public GameObject silenceWeapon;
 
+
+    private void Start()
+    {
+        silenceWeapon.SetActive(false);
+    }
     void Update()
     {
         
@@ -89,6 +95,15 @@ public class Bullet : MonoBehaviour
         if (Input.GetKeyDown("t"))
         {
             silence = !silence;
+        }
+
+        if(silence == true)
+        {
+            silenceWeapon.SetActive(true);
+        }
+        else
+        {
+            silenceWeapon.SetActive(false);
         }
 
 
