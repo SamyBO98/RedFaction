@@ -344,6 +344,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Volume
       value: 0.035
@@ -609,12 +613,32 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 432019636}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1199917557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: fddeeac0ebed86c4cab4320764b5c227,
+    type: 3}
+  m_PrefabInstance: {fileID: 464658038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1199917558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: fddeeac0ebed86c4cab4320764b5c227,
     type: 3}
   m_PrefabInstance: {fileID: 464658038}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1199917559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199917557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ede7aab069404c4c88ab83b0eff3857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalPos: {x: 0.23, y: -0.378, z: 0.8900003}
+  aimPos: {x: 0, y: -0.25, z: 0}
 --- !u!1 &1236577107
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,11 +685,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletCasing: {fileID: 117044355463652760, guid: 798eb6165641d364bb33495a52c19d29,
     type: 3}
-  ejectSpeed: 50
+  ejectSpeed: 80
   fireRate: 0.5
   clip: 30
   maxClip: 30
-  reserve: 300
+  reserve: 30
   minReserve: 0
   shotSound: {fileID: 8300000, guid: 73e8ffffd1cf94b459c5da0263c97833, type: 3}
   reloadSound: {fileID: 8300000, guid: 68c6f883aff08d2489042eed366842d7, type: 3}

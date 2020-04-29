@@ -35,6 +35,7 @@ public class Bullet : MonoBehaviour
             }
         }
 
+
         if (Input.GetKeyDown("v"))
         {
             fullAuto = !fullAuto;
@@ -63,6 +64,7 @@ public class Bullet : MonoBehaviour
             clip += reserve;
             reserve = 0;
         }
+
 
 
             if (reserve <= 0)
