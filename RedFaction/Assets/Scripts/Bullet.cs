@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     private float fireCoolDown = 0f;
     private bool fullAuto = false;
     public int clip;
+    public int maxClip;
     public AudioClip shotSound;
     public AudioClip reloadSound;
 
@@ -41,6 +42,16 @@ public class Bullet : MonoBehaviour
         else
         {
             fireRate = 0.5f;
+        }
+
+        if (Input.GetKeyDown("r"))
+        {
+            clip += 30;
+        }
+
+        if(clip >= maxClip)
+        {
+            clip = 30;
         }
     }
 
