@@ -666,9 +666,10 @@ MonoBehaviour:
   clip: 30
   maxClip: 30
   reserve: 300
+  minReserve: 0
   shotSound: {fileID: 8300000, guid: 73e8ffffd1cf94b459c5da0263c97833, type: 3}
   reloadSound: {fileID: 8300000, guid: 68c6f883aff08d2489042eed366842d7, type: 3}
-  munitionMax: 0
+  munitionMax: 1
 --- !u!82 &1236577110
 AudioSource:
   m_ObjectHideFlags: 0

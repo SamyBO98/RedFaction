@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     public int clip;
     public int maxClip;
     public int reserve;
+    public int minReserve;
     public AudioClip shotSound;
     public AudioClip reloadSound;
     public bool munitionMax;
@@ -23,6 +24,7 @@ public class Bullet : MonoBehaviour
         //tirer sans coup par coup
         if(Input.GetButton("Fire1") && Time.time> fireCoolDown)
         {
+            //Debug.Log(maxClip - clip);
             if (clip >= 1)
             {
                 fireCoolDown = Time.time + fireRate;
@@ -47,26 +49,33 @@ public class Bullet : MonoBehaviour
             fireRate = 0.5f;
         }
 
-        if (Input.GetKeyDown("r") && munitionMax == false)
+        if (Input.GetKeyDown("r") && reserve != 0 && maxClip - clip <= reserve)
         {
-            clip += 30;
             GetComponent<AudioSource>().PlayOneShot(reloadSound);
+
+            RemoveReserve();
+            clip += maxClip - clip;
+        }
+
+        if (Input.GetKeyDown("r") && reserve != 0 && maxClip - clip > reserve)
+        {
+            GetComponent<AudioSource>().PlayOneShot(reloadSound);
+            clip += reserve;
+            reserve = 0;
+        }
+
+
+            if (reserve <= 0)
+        {
+            reserve = 0;
         }
 
         if(clip >= maxClip)
         {
-            clip = 30;
+            clip = maxClip;
         }
 
-        if(clip >= 30)
-        {
-            munitionMax = true;
-        }
 
-        if(clip <= 29)
-        {
-            munitionMax = false;
-        }
     }
 
     private void OnGUI()
@@ -83,6 +92,15 @@ public class Bullet : MonoBehaviour
         {
             GUI.Box(new Rect(600, 50, 130, 30), new GUIContent("Full Auto OFF"));
         }
+
+        GUI.Box(new Rect(655, 10, 50, 30), new GUIContent("" + reserve));
+    }
+
+
+
+    private void RemoveReserve()
+    {
+        reserve -= maxClip - clip;
     }
 
 }
