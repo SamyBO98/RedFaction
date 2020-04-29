@@ -16,7 +16,9 @@ public class Bullet : MonoBehaviour
     public int minReserve;
     public AudioClip shotSound;
     public AudioClip reloadSound;
+    public AudioClip silenceSound;
     public bool munitionMax;
+    public bool silence;
 
     void Update()
     {
@@ -30,7 +32,14 @@ public class Bullet : MonoBehaviour
                 fireCoolDown = Time.time + fireRate;
                 bullet = Instantiate(bulletCasing, transform.position, transform.rotation);
                 clip -= 1;
-                GetComponent<AudioSource>().PlayOneShot(shotSound);
+                if (silence == false)
+                {
+                    GetComponent<AudioSource>().PlayOneShot(shotSound);
+                }
+                else
+                {
+                    GetComponent<AudioSource>().PlayOneShot(silenceSound);
+                }
                 bullet.velocity = transform.TransformDirection(Vector3.left * ejectSpeed);
             }
         }
@@ -77,6 +86,11 @@ public class Bullet : MonoBehaviour
             clip = maxClip;
         }
 
+        if (Input.GetKeyDown("t"))
+        {
+            silence = !silence;
+        }
+
 
     }
 
@@ -96,6 +110,14 @@ public class Bullet : MonoBehaviour
         }
 
         GUI.Box(new Rect(655, 10, 50, 30), new GUIContent("" + reserve));
+        if (silence == true)
+        {
+            GUI.Box(new Rect(600, 90, 152, 30), new GUIContent("Mode Silencieux"));
+        }
+        if(silence == false)
+        {
+            GUI.Box(new Rect(600, 90, 152, 30), new GUIContent("Mode Normal"));
+        }
     }
 
 
