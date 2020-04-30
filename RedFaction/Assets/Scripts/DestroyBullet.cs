@@ -12,7 +12,7 @@ public class DestroyBullet : MonoBehaviour
 
     public IEnumerator Test()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 }
