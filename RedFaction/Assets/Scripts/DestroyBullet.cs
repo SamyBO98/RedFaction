@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyBullet : MonoBehaviour
 {
-
+    public bool isBullet;
     void Update()
     {
         StartCoroutine(DestroyB());
@@ -18,7 +18,7 @@ public class DestroyBullet : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ennemi")
+        if (collision.gameObject.tag == "Ennemi" && isBullet == true)
         {
             StartCoroutine(BulletDisappear());
         }
