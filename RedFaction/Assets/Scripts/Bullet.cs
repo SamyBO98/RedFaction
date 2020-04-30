@@ -20,11 +20,13 @@ public class Bullet : MonoBehaviour
     public bool munitionMax;
     public bool silence;
     public GameObject silenceWeapon;
+    private PlayerStats ps;
 
 
     private void Start()
     {
         silenceWeapon.SetActive(false);
+        ps = GameObject.Find("FPSController").GetComponent<PlayerStats>();
     }
     void Update()
     {
@@ -133,6 +135,8 @@ public class Bullet : MonoBehaviour
         {
             GUI.Box(new Rect(600, 90, 152, 30), new GUIContent("Mode Normal"));
         }
+
+        GUI.Box(new Rect(10, 90, 152, 30), new GUIContent("Grenade(s) :" + ps.grenadeNumber));
     }
 
 
