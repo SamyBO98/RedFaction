@@ -24,4 +24,5 @@ public class EnnemieHealth : MonoBehaviour
             ennemieHealth -= damage;
         }
     }
+
 }
