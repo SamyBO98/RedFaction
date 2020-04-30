@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
     public bool silence;
     public GameObject silenceWeapon;
     private PlayerStats ps;
-
+    public bool automatic;
 
     private void Start()
     {
@@ -53,7 +53,7 @@ public class Bullet : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown("v"))
+        if (Input.GetKeyDown("v") && automatic == true)
         {
             fullAuto = !fullAuto;
         }
