@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         silenceWeapon.SetActive(false);
-        ps = GameObject.Find("FPSController").GetComponent<PlayerStats>();
+        ps = GameObject.Find("PlayerStats").GetComponent<PlayerStats>();
     }
     void Update()
     {

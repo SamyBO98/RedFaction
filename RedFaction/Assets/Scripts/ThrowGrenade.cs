@@ -10,7 +10,7 @@ public class ThrowGrenade : MonoBehaviour
     public int ejectSpeed;
     void Start()
     {
-        ps = GameObject.Find("FPSController").GetComponent<PlayerStats>();
+        ps = GameObject.Find("PlayerStats").GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame

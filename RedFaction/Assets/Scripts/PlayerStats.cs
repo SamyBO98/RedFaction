@@ -5,14 +5,21 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public int grenadeNumber = 2;
-    void Start()
+    public int healthBase;
+    public int healthMax;
+
+    void ApplyDamge(int dmg)
     {
-        
+        healthBase -= dmg;
+
+        if (healthBase <= 0)
+        {
+            Dead();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Dead()
     {
-        
+        Debug.Log("mort");
     }
 }
