@@ -13,16 +13,18 @@ public class EnnemieHealth : MonoBehaviour
     private void Start()
     {
         ammoBox.SetActive(false);
+        Random.InitState((int)System.DateTime.Now.Ticks);
+        randAmmoAppear = Random.Range(0, 2);
     }
     void Update()
     {
         //Debug.Log(ennemieHealth);
         if(ennemieHealth <= 0)
         {
-            Random.InitState((int)System.DateTime.Now.Ticks);
-            randAmmoAppear = Random.Range(0, 2);
-            Debug.Log(randAmmoAppear);
-            Destroy(gameObject);
+            GetComponent<Animator>().Play("Death");
+            gameObject.GetComponent<EnnemiAI>().enabled = false;
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            StartCoroutine(Dead());
             if(randAmmoAppear == 1)
             {
                 ammoBox.SetActive(true);
@@ -41,6 +43,13 @@ public class EnnemieHealth : MonoBehaviour
         {
             ennemieHealth -= damage;
         }
+    }
+
+
+    public IEnumerator Dead()
+    {
+        yield return new WaitForSeconds(30);
+        Destroy(gameObject);
     }
 
 
