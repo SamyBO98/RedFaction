@@ -88,7 +88,7 @@ public class EnnemiAI : MonoBehaviour
     public int lookAtDistance;
     public int chaseRange;
     public int attackRange;
-    public int moveSpeed;
+    public float moveSpeed;
     public int damping = 6;
     public int dmg = 10;
     private float attackTime;
@@ -98,21 +98,23 @@ public class EnnemiAI : MonoBehaviour
     private Vector3 moveDirection;
     public bool isAttacking;
     public AudioClip punch;
+    private Rigidbody rb;
 
     private void Start()
     {
         attackTime = Time.time;
         FindHealth();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
+        
         distance = Vector3.Distance(target.position, transform.position);
 
         if(distance < lookAtDistance)
         {
             LookAt();
-            //GetComponent<Animator>().Play("Idle HandUp");
             isAttacking = false;
         }
 
@@ -142,7 +144,16 @@ public class EnnemiAI : MonoBehaviour
 
     void Chase()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(
+    transform.position,
+    new Vector3(
+        target.transform.position.x,
+        transform.position.y,
+        target.transform.position.z
+    ),
+    moveSpeed * Time.deltaTime
+); 
         GetComponent<Animator>().Play("Run");
         
     }
