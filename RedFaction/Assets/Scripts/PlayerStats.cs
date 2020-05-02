@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
     public int healthBase;
     public int healthMax;
 
-    void ApplyDamge(int dmg)
+    void ApplyDamage(int dmg)
     {
         healthBase -= dmg;
 
