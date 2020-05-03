@@ -136,7 +136,7 @@ public class Bullet : MonoBehaviour
             GUI.Box(new Rect(600, 90, 152, 30), new GUIContent("Mode Normal"));
         }
 
-        GUI.Box(new Rect(10, 90, 152, 30), new GUIContent("Grenade(s) :" + ps.grenadeNumber));
+        GUI.Box(new Rect(10, 90, 152, 30), new GUIContent("Grenade(s) : " + ps.grenadeNumber));
     }
 
 

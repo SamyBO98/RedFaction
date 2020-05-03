@@ -46,4 +46,10 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("mort");
     }
 
+    private void OnGUI()
+    {
+        GUI.Box(new Rect(10, 10, 120, 30), new GUIContent("" + healthBase));
+        GUI.Box(new Rect(10, 50, 120, 30), new GUIContent("" + armorBase));
+    }
+
 }
