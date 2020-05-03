@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class AmoBox : MonoBehaviour
 {
-    private Bullet b1;
-    private Bullet b2;
+    public Bullet b1;
+    public Bullet b2;
     public int addReserveM4A1;
     public int addReservePistol;
     public AudioClip pickUpAmmo;
     // Start is called before the first frame update
     void Start()
     {
-        b1 = GameObject.Find("Eject").GetComponent<Bullet>();
-        b2 = GameObject.Find("Eject2").GetComponent<Bullet>();
+        //b1 = GameObject.Find("Eject").GetComponent<Bullet>();
+        //b2 = GameObject.Find("Eject2").GetComponent<Bullet>();
     }
 
     private void OnTriggerEnter(Collider hit)
