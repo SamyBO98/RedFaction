@@ -7,7 +7,7 @@ public class BulletEnnemi : MonoBehaviour
 {
     public EnnemieGunAI ega;
     public EnnemieGunHealth egh;
-    public GameObject bullet;
+    public Rigidbody bullet;
     public Transform target;
     private float timerShots;
     public float timeBtwShots = 0.25f;
@@ -16,18 +16,19 @@ public class BulletEnnemi : MonoBehaviour
 
     private void Update()
     {
+     // Transform = eject   
+
         if(ega.isAttacking == true && egh.isDead == false)
         {
             if (timerShots <= 0)
             {
+                //Debug.Log(transform);
+                //Debug.Log(target.position);
                 //Vector3 test = target.position;
                 //Debug.Log(test);
-                GameObject bulletClone;
-                bulletClone = Instantiate(bullet, transform.position, transform.rotation) as GameObject;
-                bulletClone.transform.Rotate(Vector3.left * 90);
-                Rigidbody rb;
-                rb = bulletClone.GetComponent<Rigidbody>();
-                rb.AddForce(transform.forward * force);
+                Rigidbody bulletClone;
+                bulletClone = Instantiate(bullet, transform.position +(target.position  - transform.position).normalized, Quaternion.LookRotation(target.position));
+                bulletClone.velocity = (target.position - transform.position).normalized * 10;
                 timerShots = timeBtwShots;
             }
             else
@@ -35,8 +36,9 @@ public class BulletEnnemi : MonoBehaviour
                 timerShots -= Time.deltaTime;
             }
         }
-
     }
+
+
 
 
 

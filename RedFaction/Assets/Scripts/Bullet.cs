@@ -114,26 +114,26 @@ public class Bullet : MonoBehaviour
     private void OnGUI()
     {
         GUI.contentColor = Color.green;
-        GUI.Box(new Rect(600, 10, 50, 30), new GUIContent("" +clip));
+        GUI.Box(new Rect(1700, 10, 50, 30), new GUIContent("" +clip));
         GUI.skin.box.fontSize = 20;
 
         if (fullAuto == true)
         {
-            GUI.Box(new Rect(600, 50, 120, 30), new GUIContent("Full Auto ON"));
+            GUI.Box(new Rect(1700, 50, 120, 30), new GUIContent("Full Auto ON"));
         }
         if(fullAuto == false)
         {
-            GUI.Box(new Rect(600, 50, 130, 30), new GUIContent("Full Auto OFF"));
+            GUI.Box(new Rect(1700, 50, 130, 30), new GUIContent("Full Auto OFF"));
         }
 
-        GUI.Box(new Rect(655, 10, 50, 30), new GUIContent("" + reserve));
+        GUI.Box(new Rect(1755, 10, 50, 30), new GUIContent("" + reserve));
         if (silence == true)
         {
-            GUI.Box(new Rect(600, 90, 152, 30), new GUIContent("Mode Silencieux"));
+            GUI.Box(new Rect(1700, 90, 152, 30), new GUIContent("Mode Silencieux"));
         }
         if(silence == false)
         {
-            GUI.Box(new Rect(600, 90, 152, 30), new GUIContent("Mode Normal"));
+            GUI.Box(new Rect(1700, 90, 152, 30), new GUIContent("Mode Normal"));
         }
 
         GUI.Box(new Rect(10, 90, 152, 30), new GUIContent("Grenade(s) : " + ps.grenadeNumber));
