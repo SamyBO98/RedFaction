@@ -21,6 +21,8 @@ public class EnnemieGunAI : MonoBehaviour
     public int gravity = 20;
     private Vector3 moveDirection;
     public bool isAttacking;
+    public int bulletTimer;
+    public int shootInterval;
 
     private void Start()
     {
@@ -84,9 +86,7 @@ public class EnnemieGunAI : MonoBehaviour
         if (Time.time > attackTime)
         {
             GetComponent<Animator>().Play("Shoot_SingleShot_AR");
-            //target.SendMessage("ApplyDamage", dmg);
             attackTime = Time.time + attackRepeatTime;
-            //StartCoroutine(tempoAttack());
         }
     }
 
@@ -100,6 +100,14 @@ public class EnnemieGunAI : MonoBehaviour
     void FindHealth()
     {
         target = GameObject.Find("PlayerStats").GetComponent<PlayerStats>().transform;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("touché");
+        }
     }
 
 }

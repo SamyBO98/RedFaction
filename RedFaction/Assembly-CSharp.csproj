@@ -60,6 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DownloadedAssets\Ennemi\Demo\Scripts\Actions.cs" />
+    <Compile Include="Assets\DownloadedAssets\Ennemi\Demo\Scripts\CharacterPanel.cs" />
+    <Compile Include="Assets\DownloadedAssets\Ennemi\Demo\Scripts\CharacterViewer.cs" />
+    <Compile Include="Assets\DownloadedAssets\Ennemi\Demo\Scripts\PlayerController.cs" />
     <Compile Include="Assets\DownloadedAssets\PorglezompPyroclastics\ExplosionMat.cs" />
     <Compile Include="Assets\DownloadedAssets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\DownloadedAssets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
@@ -142,11 +146,20 @@
     <Compile Include="Assets\DownloadedAssets\Standard Assets\Utility\WaypointProgressTracker.cs" />
     <Compile Include="Assets\Scripts\Aim.cs" />
     <Compile Include="Assets\Scripts\AmoBox.cs" />
+    <Compile Include="Assets\Scripts\ArmorBox.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\BulletEnnemi.cs" />
+    <Compile Include="Assets\Scripts\BulletEnnemiOnCollision.cs" />
     <Compile Include="Assets\Scripts\DestroyBullet.cs" />
+    <Compile Include="Assets\Scripts\EnnemiAI.cs" />
+    <Compile Include="Assets\Scripts\EnnemieGunAI.cs" />
+    <Compile Include="Assets\Scripts\EnnemieGunHealth.cs" />
     <Compile Include="Assets\Scripts\EnnemieHealth.cs" />
     <Compile Include="Assets\Scripts\ExplosionZone.cs" />
     <Compile Include="Assets\Scripts\GrenadeExplosion.cs" />
+    <Compile Include="Assets\Scripts\HealthBox.cs" />
+    <Compile Include="Assets\Scripts\HUDLife.cs" />
+    <Compile Include="Assets\Scripts\LockEnnemieRotation.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\SwapWeapon.cs" />
     <Compile Include="Assets\Scripts\ThrowGrenade.cs" />
@@ -158,6 +171,7 @@
     <None Include="Assets\DownloadedAssets\PorglezompPyroclastics\Explosion.shader" />
     <None Include="Assets\DownloadedAssets\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\DownloadedAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\DownloadedAssets\Ennemi\Shaders\SkinShader.shader" />
     <None Include="Assets\DownloadedAssets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\DownloadedAssets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\DownloadedAssets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />

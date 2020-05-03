@@ -52,4 +52,6 @@ public class PlayerStats : MonoBehaviour
         GUI.Box(new Rect(10, 50, 120, 30), new GUIContent("" + armorBase));
     }
 
+
+
 }

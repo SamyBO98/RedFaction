@@ -13,6 +13,7 @@ public class EnnemieGunHealth : MonoBehaviour
     public int randAmmoAppear;
     public int randHealthAppear;
     public int randArmorAppear;
+    public bool isDead;
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class EnnemieGunHealth : MonoBehaviour
         //Debug.Log(ennemieHealth);
         if (ennemieHealth <= 0)
         {
+            isDead = true;
             //Debug.Log(randHealthAppear);
             //Debug.Log(randAmmoAppear);
             GetComponent<Animator>().Play("Die");

@@ -82,7 +82,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shoot_Autoshot_AR
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -420,7 +420,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shoot_SingleShot_AR
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -461,7 +461,7 @@ AnimatorStateMachine:
     m_Position: {x: 276, y: 444, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102885244088947746}
-    m_Position: {x: 300, y: 288, z: 0}
+    m_Position: {x: 276, y: 288, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102088155696507906}
     m_Position: {x: 516, y: 444, z: 0}

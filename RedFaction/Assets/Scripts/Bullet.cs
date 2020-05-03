@@ -84,7 +84,7 @@ public class Bullet : MonoBehaviour
 
 
 
-            if (reserve <= 0)
+        if (reserve <= 0)
         {
             reserve = 0;
         }
