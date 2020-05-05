@@ -99,7 +99,7 @@ public class EnnemieGunAI : MonoBehaviour
 
     void FindHealth()
     {
-        //target = GameObject.Find("PlayerStats").GetComponent<PlayerStats>().transform;
+        target = GameObject.Find("PlayerStats").GetComponent<PlayerStats>().transform;
     }
 
     public void OnCollisionEnter(Collision collision)

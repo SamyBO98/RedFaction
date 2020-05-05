@@ -163,6 +163,7 @@
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\SwapWeapon.cs" />
     <Compile Include="Assets\Scripts\ThrowGrenade.cs" />
+    <Compile Include="Assets\Scripts\WeaponInventory.cs" />
     <None Include="Assets\DownloadedAssets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\DownloadedAssets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\DownloadedAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

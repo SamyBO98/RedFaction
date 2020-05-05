@@ -20,14 +20,21 @@ public class DestroyBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ennemi" && isBullet == true)
         {
-            StartCoroutine(BulletDisappear());
+            Destroy(gameObject);
+           // StartCoroutine(BulletDisappear());
+        }
+
+        if(collision.gameObject.tag == "Decor" && isBullet == true)
+        {
+            Destroy(gameObject);
         }
     }
 
-    public IEnumerator BulletDisappear()
+
+    /*public IEnumerator BulletDisappear()
     {
         yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
-    }
+    }*/
 
 }

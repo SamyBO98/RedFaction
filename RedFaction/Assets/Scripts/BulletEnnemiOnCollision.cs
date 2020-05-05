@@ -9,6 +9,7 @@ public class BulletEnnemiOnCollision : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("touché");
+            Destroy(gameObject);
         }
     }
 }

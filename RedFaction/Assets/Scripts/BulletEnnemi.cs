@@ -14,6 +14,11 @@ public class BulletEnnemi : MonoBehaviour
     public float fireRadius = 25f;
     public float force;
 
+
+    private void Start()
+    {
+        FindHealth();
+    }
     private void Update()
     {
      // Transform = eject   
@@ -36,6 +41,11 @@ public class BulletEnnemi : MonoBehaviour
                 timerShots -= Time.deltaTime;
             }
         }
+    }
+
+    void FindHealth()
+    {
+        target = GameObject.Find("EnnemyShootingPoint").transform;
     }
 
 

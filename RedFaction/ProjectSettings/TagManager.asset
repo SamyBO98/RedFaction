@@ -8,6 +8,8 @@ TagManager:
   - Ennemi
   - Weapon
   - EnnemiBullet
+  - Decor
+  - BulletRifleEnnemi
   layers:
   - Default
   - TransparentFX

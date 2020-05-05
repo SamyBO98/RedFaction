@@ -7,6 +7,7 @@ public class SwapWeapon : MonoBehaviour
     void Start()
     {
         SelectWeapon();
+       
     }
 
     // Update is called once per frame
@@ -14,6 +15,7 @@ public class SwapWeapon : MonoBehaviour
     {
         draw.SetActive(true);
         int previousSelectedWeapons = selectedWeapon;
+
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             if (selectedWeapon >= transform.childCount - 1)
