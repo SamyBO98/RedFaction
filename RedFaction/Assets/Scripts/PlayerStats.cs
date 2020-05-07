@@ -48,6 +48,8 @@ public class PlayerStats : MonoBehaviour
 
     private void OnGUI()
     {
+        GUI.contentColor = Color.white;
+        GUI.skin.box.fontSize = 20;
         GUI.Box(new Rect(10, 10, 120, 30), new GUIContent("" + healthBase));
         GUI.Box(new Rect(10, 50, 120, 30), new GUIContent("" + armorBase));
     }
