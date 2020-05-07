@@ -9,7 +9,14 @@ public class PlayerStats : MonoBehaviour
     public int healthMax;
     public int armorBase;
     public int armorMax;
+    public AudioSource audio1;
+    public AudioSource audio2;
 
+
+    private void Start()
+    {
+        audio1.Play();
+    }
 
     private void Update()
     {
@@ -53,6 +60,7 @@ public class PlayerStats : MonoBehaviour
         GUI.Box(new Rect(10, 10, 120, 30), new GUIContent("" + healthBase));
         GUI.Box(new Rect(10, 50, 120, 30), new GUIContent("" + armorBase));
     }
+
 
 
 
