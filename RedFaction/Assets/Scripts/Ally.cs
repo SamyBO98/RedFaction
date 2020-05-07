@@ -23,6 +23,8 @@ public class Ally : MonoBehaviour
     public float y;
     public float z;
     public bool seePlayer;
+    public Dialogue dial;
+    public AllyHealth Ah;
 
     private void Start()
     {
@@ -35,7 +37,6 @@ public class Ally : MonoBehaviour
     {
 
         distance = Vector3.Distance(target.position, transform.position);
-
         if (distance < lookAtDistance)
         {
             LookAt();
@@ -44,7 +45,7 @@ public class Ally : MonoBehaviour
 
         if (distance < attackRange)
         {
-            GetComponent<Animator>().Play("Idle HandUp");
+            WaitDialogue();
             transform.localRotation = Quaternion.Euler(x, y, z);
             isAttacking = true;
             
@@ -56,18 +57,6 @@ public class Ally : MonoBehaviour
             
         }
 
-        if (distance > chaseRange)
-        {
-            GetComponent<Animator>().Play("Idle HandUp");
-            
-        }
-    }
-
-    void LookAt()
-    {
-        Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
-        //GetComponent<Animator>().Play("Idle HandUp");
     }
 
     void Chase()
@@ -86,16 +75,24 @@ public class Ally : MonoBehaviour
 
     }
 
-    void Attack()
+    void WaitDialogue()
     {
+        if(Ah.allyHealth != 0 && dial.canPunch == false)
+        {
+            GetComponent<Animator>().Play("Idle HandUp");
+        }
+
+        if(dial.canPunch == true && Ah.allyHealth !=0)
+        {
+            GetComponent<Animator>().Play("Hit");
+        }
         
     }
 
-    void ApplyDamage()
+    void LookAt()
     {
-        chaseRange += 20;
-        moveSpeed += 2;
-        lookAtDistance += 40;
+        Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+        //GetComponent<Animator>().Play("Idle HandUp");
     }
-
 }

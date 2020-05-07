@@ -3687,9 +3687,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9766348662de8b74488fa4d674901303, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.582
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3785,6 +3785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62a8a5f957e17546af7c2dfe133e479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio1: {fileID: 1012025646}
+  Ah: {fileID: 6259431767052272514}
 --- !u!1 &1061384107
 GameObject:
   m_ObjectHideFlags: 0
@@ -7471,20 +7473,44 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2113159998}
+    - target: {fileID: 6259431767052272511, guid: f5ab6da94416e1e4ea133d26357f6ae9,
+        type: 3}
+      propertyPath: dial
+      value: 
+      objectReference: {fileID: 1012025647}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5ab6da94416e1e4ea133d26357f6ae9, type: 3}
+--- !u!1 &6259431767052272509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5791819854826134856, guid: f5ab6da94416e1e4ea133d26357f6ae9,
+    type: 3}
+  m_PrefabInstance: {fileID: 485638340973239861}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6259431767052272511 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6259431767052272511, guid: f5ab6da94416e1e4ea133d26357f6ae9,
     type: 3}
   m_PrefabInstance: {fileID: 485638340973239861}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6259431767052272509}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8710c0bfb37b7dc4c87f60863035a606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6259431767052272514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259431767052272509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41fd2209cae50be4a9bc29e003741f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allyHealth: 100
 --- !u!1001 &6794854805328075215
 PrefabInstance:
   m_ObjectHideFlags: 0
