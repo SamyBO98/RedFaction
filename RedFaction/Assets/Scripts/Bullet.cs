@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour
     public GameObject silenceWeapon;
     private PlayerStats ps;
     public bool automatic;
+    public float buttonPressed;
 
     private void Start()
     {
@@ -98,6 +99,7 @@ public class Bullet : MonoBehaviour
         {
             silence = !silence;
         }
+
 
         if(silence == true)
         {
