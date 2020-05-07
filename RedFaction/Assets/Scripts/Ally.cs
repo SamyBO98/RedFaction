@@ -22,6 +22,7 @@ public class Ally : MonoBehaviour
     public float x;
     public float y;
     public float z;
+    public bool seePlayer;
 
     private void Start()
     {
@@ -48,9 +49,10 @@ public class Ally : MonoBehaviour
             isAttacking = true;
 
         }
-        else if (distance < chaseRange && isAttacking == false)
+        else if (distance < chaseRange && isAttacking == false && seePlayer == true)
         {
             Chase();
+            
         }
 
         if (distance > chaseRange)

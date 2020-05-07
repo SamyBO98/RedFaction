@@ -10,6 +10,7 @@ TagManager:
   - EnnemiBullet
   - Decor
   - BulletRifleEnnemi
+  - Collider
   layers:
   - Default
   - TransparentFX
