@@ -47,6 +47,7 @@ public class Ally : MonoBehaviour
             GetComponent<Animator>().Play("Idle HandUp");
             transform.localRotation = Quaternion.Euler(x, y, z);
             isAttacking = true;
+            
 
         }
         else if (distance < chaseRange && isAttacking == false && seePlayer == true)
@@ -58,6 +59,7 @@ public class Ally : MonoBehaviour
         if (distance > chaseRange)
         {
             GetComponent<Animator>().Play("Idle HandUp");
+            
         }
     }
 

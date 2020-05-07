@@ -11,6 +11,7 @@ TagManager:
   - Decor
   - BulletRifleEnnemi
   - Collider
+  - Ally
   layers:
   - Default
   - TransparentFX
