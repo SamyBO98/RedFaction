@@ -6,6 +6,12 @@ public class AllyHealth : MonoBehaviour
 {
     public GameObject ennemie;
     public int allyHealth;
+    public GameObject gun;
+
+    private void Start()
+    {
+        gun.SetActive(false);
+    }
     void Update()
     {
         //Debug.Log(ennemieHealth);
@@ -29,7 +35,13 @@ public class AllyHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         GetComponent<Animator>().Play("Death");
+        if (gun != null)
+        {
+            gun.SetActive(true);
+        }
     }
+
+
 
 
 
