@@ -18,6 +18,7 @@ public class BulletEnnemi : MonoBehaviour
     private void Start()
     {
         FindHealth();
+        bullet = GameObject.FindGameObjectWithTag("EnnemiBullet").GetComponent<Rigidbody>();
     }
     private void Update()
     {

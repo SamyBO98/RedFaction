@@ -15,6 +15,7 @@ TagManager:
   - EnnemiDamagesArea
   - Eject2
   - Eject1
+  - BloodScreen
   layers:
   - Default
   - TransparentFX

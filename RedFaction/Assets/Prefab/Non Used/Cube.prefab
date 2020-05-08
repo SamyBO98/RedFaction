@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0505949ed5fd3de4daddca4755197469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodyScreen: {fileID: 9138288600738945461, guid: cae2693d9586f1b4b91c28ea0277b8b2,
+    type: 3}
 --- !u!54 &1921298092
 Rigidbody:
   m_ObjectHideFlags: 0
