@@ -31,8 +31,6 @@ public class Dialogue : MonoBehaviour
         audio2.Play();
         yield return new WaitForSeconds(5);
         audio3.Play();
-        yield return new WaitForSeconds(10);
-        audio3.Stop();
         
 
     }

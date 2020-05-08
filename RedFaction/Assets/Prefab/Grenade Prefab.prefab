@@ -109,7 +109,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &114762058400714792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32fa6058e420d845bbf00714252cd3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBullet: 0
 --- !u!114 &114972339716687038
 MonoBehaviour:
   m_ObjectHideFlags: 0
