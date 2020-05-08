@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1600210311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1600210312}
+  - component: {fileID: 1600210313}
+  - component: {fileID: 1600210314}
+  m_Layer: 0
+  m_Name: EnnemieTakeDamages
+  m_TagString: EnnemiDamagesArea
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1600210312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600210311}
+  m_LocalRotation: {x: -0, y: 0.9976787, z: -0, w: -0.06809804}
+  m_LocalPosition: {x: -0.00029085204, y: 1.3678732, z: 0.13109072}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8627931911102865718}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 43.856003, z: 0}
+--- !u!65 &1600210313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600210311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3074385, y: 1.5077646, z: 1}
+  m_Center: {x: 0.0354166, y: -0.11980569, z: -0.0000000065296337}
+--- !u!114 &1600210314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600210311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fea6d1856918d94c8b3c35c14279a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  egh: {fileID: 5829647308576087502}
 --- !u!1 &5829647308853463371
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +919,7 @@ MonoBehaviour:
   addReserveM4A1: 50
   addReservePistol: 30
   pickUpAmmo: {fileID: 8300000, guid: 77d4ec8b4d26a3c41bf89672af34f091, type: 3}
+  wip: {fileID: 0}
 --- !u!1 &8627931911102971104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,6 +1795,7 @@ Transform:
   - {fileID: 5829647309010475583}
   - {fileID: 5829647309818293145}
   - {fileID: 5829647309016636037}
+  - {fileID: 1600210312}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1905,6 +1965,7 @@ MonoBehaviour:
   randHealthAppear: 0
   randArmorAppear: 0
   isDead: 0
+  damages: {fileID: 1600210313}
 --- !u!114 &5829647308576087489
 MonoBehaviour:
   m_ObjectHideFlags: 0

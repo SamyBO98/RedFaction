@@ -8,7 +8,7 @@ public class BulletEnnemiOnCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("touché");
+            //Debug.Log("touché");
             Destroy(gameObject);
         }
     }

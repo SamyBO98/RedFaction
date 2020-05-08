@@ -14,6 +14,7 @@ public class EnnemieGunHealth : MonoBehaviour
     public int randHealthAppear;
     public int randArmorAppear;
     public bool isDead;
+    public Collider damages;
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class EnnemieGunHealth : MonoBehaviour
             //gameObject.GetComponent<EnnemiAI>().enabled = false;
             gameObject.GetComponent<EnnemieGunAI>().enabled = false;
             gameObject.GetComponent<CharacterController>().enabled = false;
+            damages.enabled = false;
             StartCoroutine(Dead());
             if (randAmmoAppear == 1)
             {
@@ -68,14 +70,6 @@ public class EnnemieGunHealth : MonoBehaviour
                 armorBox.SetActive(false);
             }
 
-        }
-    }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            ennemieHealth -= damage;
         }
     }
 

@@ -148,4 +148,5 @@ public class Bullet : MonoBehaviour
         reserve -= maxClip - clip;
     }
 
+
 }

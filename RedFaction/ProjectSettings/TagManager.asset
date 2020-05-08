@@ -12,6 +12,7 @@ TagManager:
   - BulletRifleEnnemi
   - Collider
   - Ally
+  - EnnemiDamagesArea
   layers:
   - Default
   - TransparentFX

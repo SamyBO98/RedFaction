@@ -7,7 +7,6 @@ public class AllyHealth : MonoBehaviour
     public GameObject ennemie;
     public int allyHealth;
     public GameObject gun;
-
     private void Start()
     {
         gun.SetActive(false);

@@ -9,11 +9,12 @@ public class AmoBox : MonoBehaviour
     public int addReserveM4A1;
     public int addReservePistol;
     public AudioClip pickUpAmmo;
+    public WeaponInventoryPistol wip;
     // Start is called before the first frame update
     void Start()
     {
-        //b1 = GameObject.Find("Eject").GetComponent<Bullet>();
-        //b2 = GameObject.Find("Eject2").GetComponent<Bullet>();
+        b1 = GameObject.Find("Eject").GetComponent<Bullet>();
+        b2 = GameObject.Find("Eject2").GetComponent<Bullet>();
     }
 
     private void OnTriggerEnter(Collider hit)
@@ -21,7 +22,11 @@ public class AmoBox : MonoBehaviour
         if(hit.gameObject.tag == "Player")
         {
             b1.reserve += addReserveM4A1;
-            b2.reserve += addReservePistol;
+            if(wip.hasRiffle == true)
+            {
+                b2.reserve += addReservePistol;
+            }
+            
             GetComponent<AudioSource>().PlayOneShot(pickUpAmmo);
             StartCoroutine(DestroyAmmoBox());
         }
