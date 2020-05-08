@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
     private PlayerStats ps;
     public bool automatic;
     public float buttonPressed;
+    public GameObject fireShot;
 
     private void Start()
     {
@@ -38,6 +39,7 @@ public class Bullet : MonoBehaviour
             //Debug.Log(maxClip - clip);
             if (clip >= 1)
             {
+                Instantiate(fireShot, silenceWeapon.transform.position, silenceWeapon.transform.rotation);
                 fireCoolDown = Time.time + fireRate;
                 bullet = Instantiate(bulletCasing, transform.position, transform.rotation);
                 clip -= 1;
