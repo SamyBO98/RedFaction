@@ -13,6 +13,8 @@ TagManager:
   - Collider
   - Ally
   - EnnemiDamagesArea
+  - Eject2
+  - Eject1
   layers:
   - Default
   - TransparentFX

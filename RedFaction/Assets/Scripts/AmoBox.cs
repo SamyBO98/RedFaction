@@ -11,10 +11,10 @@ public class AmoBox : MonoBehaviour
     public AudioClip pickUpAmmo;
     public WeaponInventoryPistol wip;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        b1 = GameObject.Find("Eject").GetComponent<Bullet>();
-        b2 = GameObject.Find("Eject2").GetComponent<Bullet>();
+        wip = GameObject.Find("Gun").GetComponent<WeaponInventoryPistol>();
+
     }
 
     private void OnTriggerEnter(Collider hit)
