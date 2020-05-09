@@ -18,6 +18,15 @@ public class Doors : MonoBehaviour
         original = doorLeft.transform.position;
         original2 = doorRight.transform.position;
     }
+
+    private void Update()
+    {
+        if(open == false)
+        {
+            doorLeft.transform.position = Vector3.MoveTowards(doorLeft.transform.position, original, speed * Time.deltaTime);
+            doorRight.transform.position = Vector3.MoveTowards(doorRight.transform.position, original2, speed * Time.deltaTime);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -40,9 +49,8 @@ public class Doors : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        
-        doorLeft.transform.position = original;
-        doorRight.transform.position = original2;
+        open = false;
+      
     }
 
     void Open()
