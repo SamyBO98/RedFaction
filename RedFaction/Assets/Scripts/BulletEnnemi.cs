@@ -34,7 +34,7 @@ public class BulletEnnemi : MonoBehaviour
                 //Debug.Log(test);
                 Rigidbody bulletClone;
                 bulletClone = Instantiate(bullet, transform.position +(target.position  - transform.position).normalized, Quaternion.LookRotation(target.position));
-                bulletClone.velocity = (target.position - transform.position).normalized * 10;
+                bulletClone.velocity = (target.position - transform.position).normalized * force;
                 timerShots = timeBtwShots;
             }
             else

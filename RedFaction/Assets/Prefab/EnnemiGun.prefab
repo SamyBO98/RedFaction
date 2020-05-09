@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fea6d1856918d94c8b3c35c14279a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: {fileID: 198679353923634054}
   egh: {fileID: 5829647308576087502}
 --- !u!1 &5829647308853463371
 GameObject:
@@ -3904,6 +3905,11 @@ PrefabInstance:
       propertyPath: ColorModule.enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198679353919739006, guid: 779aa8c25fbd0e1488637639c9fff976,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 199019333588427804, guid: 779aa8c25fbd0e1488637639c9fff976,
         type: 3}
       propertyPath: m_LengthScale
@@ -3919,6 +3925,12 @@ PrefabInstance:
 --- !u!4 &4164528538605908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4164528543026860, guid: 779aa8c25fbd0e1488637639c9fff976,
+    type: 3}
+  m_PrefabInstance: {fileID: 4560888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &198679353923634054 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198679353919739006, guid: 779aa8c25fbd0e1488637639c9fff976,
     type: 3}
   m_PrefabInstance: {fileID: 4560888}
   m_PrefabAsset: {fileID: 0}

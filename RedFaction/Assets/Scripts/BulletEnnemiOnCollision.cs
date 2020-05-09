@@ -5,26 +5,31 @@ using UnityEngine;
 public class BulletEnnemiOnCollision : MonoBehaviour
 {
     public GameObject canvas;
+    public PlayerStats ps;
 
-    private void Start()
-    {
-        canvas.SetActive(false);
-    }
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            StartCoroutine(CanvasShow());
+            Instantiate(canvas, transform.position, transform.rotation);
+            if(ps.armorBase <= 0)
+            {
+                ps.healthBase -= 15;
+            }
+            else
+            {
+                ps.armorBase -= 10;
+            }
+            Destroy(gameObject);
+        }
+
+        if(collision.gameObject.tag == "Decor")
+        {
             Destroy(gameObject);
         }
     }
 
-    public IEnumerator CanvasShow()
-    {
-        canvas.SetActive(true);
-        yield return new WaitForSeconds(1);
-        canvas.SetActive(false);
-    }
+
 
 
 }

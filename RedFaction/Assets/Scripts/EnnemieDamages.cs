@@ -11,7 +11,6 @@ public class EnnemieDamages : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             blood.Play();
-            Debug.Log("touché");
             egh.ennemieHealth -= 10;
         }
     }

@@ -23,6 +23,7 @@ public class EnnemieGunAI : MonoBehaviour
     public bool isAttacking;
     public int bulletTimer;
     public int shootInterval;
+    public AudioClip bulletEnnemie;
 
     private void Start()
     {
@@ -85,6 +86,7 @@ public class EnnemieGunAI : MonoBehaviour
     {
         if (Time.time > attackTime)
         {
+            GetComponent<AudioSource>().PlayOneShot(bulletEnnemie);
             GetComponent<Animator>().Play("Shoot_SingleShot_AR");
             attackTime = Time.time + attackRepeatTime;
         }
