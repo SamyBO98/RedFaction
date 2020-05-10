@@ -12,6 +12,8 @@ public class Doors : MonoBehaviour
     Vector3 original2;
     public bool open;
     public int speed;
+    public AudioClip doorOpen;
+    public AudioClip doorClose;
 
     private void Start()
     {
@@ -33,6 +35,7 @@ public class Doors : MonoBehaviour
         {
             open = true;
             //Debug.Log("ouverture");
+            GetComponent<AudioSource>().PlayOneShot(doorOpen);
             Open();
         }
     }
@@ -50,7 +53,8 @@ public class Doors : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         open = false;
-      
+        GetComponent<AudioSource>().PlayOneShot(doorClose);
+
     }
 
     void Open()
