@@ -6,11 +6,13 @@ public class RandomDialogue : MonoBehaviour
 {
    
     public AudioClip audioSpeak;
+    public Collider col;
+    public AudioSource test;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            
+            col.enabled = false;
             StartCoroutine(SoundTime());
         }
     }
@@ -20,6 +22,11 @@ public class RandomDialogue : MonoBehaviour
     {
         GetComponent<AudioSource>().PlayOneShot(audioSpeak);
         yield return new WaitForSeconds(audioSpeak.length);
-        Destroy(gameObject);
+        if(test != null)
+        {
+            test.Play();
+        }
+        //col.enabled = false;
+        
     }
 }
