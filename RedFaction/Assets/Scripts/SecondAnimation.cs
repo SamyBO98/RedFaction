@@ -23,6 +23,8 @@ public class SecondAnimation : MonoBehaviour
     public float z;
     public bool isAlly;
     public EnnemieHealth eh;
+    public bool look;
+    public GameObject col;
 
     private void Update()
     {
@@ -44,6 +46,10 @@ public class SecondAnimation : MonoBehaviour
         {
             GetComponent<Animator>().Play("Idle HandUp");
             LookAtPlayer();
+            look = true;
+            col.SetActive(true);
+            
+            
         }
 
 
@@ -75,6 +81,7 @@ public class SecondAnimation : MonoBehaviour
     {
         Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+       
         //GetComponent<Animator>().Play("Idle HandUp");
     }
 
@@ -82,5 +89,6 @@ public class SecondAnimation : MonoBehaviour
     {
         Quaternion rotation = Quaternion.LookRotation(target2.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+
     }
 }

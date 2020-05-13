@@ -10,13 +10,18 @@ public class Dialogue : MonoBehaviour
     public bool canPunch;
     public AudioSource audio2;
     public AudioSource audio3;
+    public bool beginning;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Ally")
         {
             audio1.Play();
-            StartCoroutine(DieAll());
+            if(beginning == true)
+            {
+                StartCoroutine(DieAll());
+            }
+            
         }
     }
 
