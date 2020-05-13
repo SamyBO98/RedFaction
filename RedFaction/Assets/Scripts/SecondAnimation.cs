@@ -8,8 +8,10 @@ public class SecondAnimation : MonoBehaviour
 
 
     public float distance;
+    public float distance2;
     public Transform target;
     public Transform target2;
+    public Transform target3;
     public int lookAtDistance;
     public int chaseRange;
     public float moveSpeed;
@@ -25,11 +27,18 @@ public class SecondAnimation : MonoBehaviour
     public EnnemieHealth eh;
     public bool look;
     public GameObject col;
+    public Dialogue2 d2;
+    public bool speak;
+    public GameObject explosion;
 
     private void Update()
     {
-
-        distance = Vector3.Distance(target.position, transform.position);
+        if(target != null)
+        {
+            distance = Vector3.Distance(target.position, transform.position);
+        }
+        
+        distance2 = Vector3.Distance(target3.position, transform.position);
         if (distance < lookAtDistance)
         {
             LookAt();
@@ -42,7 +51,7 @@ public class SecondAnimation : MonoBehaviour
 
         }
 
-        if(eh.ennemieHealth ==0 && isAlly == true)
+        if(eh.ennemieHealth ==0 && isAlly == true && speak == true)
         {
             GetComponent<Animator>().Play("Idle HandUp");
             LookAtPlayer();
@@ -52,6 +61,8 @@ public class SecondAnimation : MonoBehaviour
             
         }
 
+        StartCoroutine(ChaseOther());
+        
 
 
        
@@ -90,5 +101,41 @@ public class SecondAnimation : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(target2.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
 
+    }
+
+    void LookOther()
+    {
+        Quaternion rotation = Quaternion.LookRotation(target3.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+    }
+
+    void ChaseFast()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, target3.position, moveSpeed * Time.deltaTime);
+    }
+    public IEnumerator ChaseOther()
+    {
+        if(d2.speak == true && isAlly == true)
+        {
+            yield return new WaitForSeconds(13);
+            speak = false;
+            ChaseFast();
+            LookOther();
+            GetComponent<Animator>().Play("Run");
+            yield return new WaitForSeconds(3);
+            
+
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Explode")
+        {
+            Instantiate(explosion, target3.transform.position, target3.transform.rotation);
+            Destroy(gameObject);
+            
+        }
     }
 }
