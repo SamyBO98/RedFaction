@@ -35,7 +35,11 @@ public class EnnemieHealth : MonoBehaviour
             //Debug.Log(randHealthAppear);
             //Debug.Log(randAmmoAppear);
             GetComponent<Animator>().Play("Death");
-            gameObject.GetComponent<EnnemiAI>().enabled = false;
+            if(gameObject.GetComponent<EnnemiAI>() != null)
+            {
+                gameObject.GetComponent<EnnemiAI>().enabled = false;
+            }
+            
             //gameObject.GetComponent<EnnemieGunAI>().enabled = false;
             gameObject.GetComponent<CharacterController>().enabled = false;
             StartCoroutine(Dead());
