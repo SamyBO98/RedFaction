@@ -18466,6 +18466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 0
+  distance2: 0
   target: {fileID: 1668322075}
   target2: {fileID: 388409431}
   target3: {fileID: 624069110}
@@ -19085,7 +19086,7 @@ GameObject:
   - component: {fileID: 624069111}
   m_Layer: 0
   m_Name: Follow2nd (1)
-  m_TagString: Untagged
+  m_TagString: Explode
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25750,7 +25751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &829897728
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48797,6 +48798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 0
+  distance2: 0
   target: {fileID: 611312508}
   target2: {fileID: 374269390}
   target3: {fileID: 624069110}
@@ -51855,7 +51857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1829711287
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51867,8 +51869,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.273332, y: 1, z: 10.698757}
-  m_Center: {x: -0.27168146, y: 0, z: 4.849393}
+  m_Size: {x: 6.6993656, y: 1, z: 14.721422}
+  m_Center: {x: -0.38085508, y: 0, z: 2.838067}
 --- !u!4 &1829711288
 Transform:
   m_ObjectHideFlags: 0
