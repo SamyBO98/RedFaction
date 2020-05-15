@@ -16843,9 +16843,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.266
       objectReference: {fileID: 0}
+    - target: {fileID: 395199664, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Size.y
+      value: 0.07815361
+      objectReference: {fileID: 0}
+    - target: {fileID: 395199664, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Center.y
+      value: -0.4609232
+      objectReference: {fileID: 0}
     - target: {fileID: 1140034273, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_TagString
       value: Throw
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808877047, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
@@ -27512,6 +27524,7 @@ MonoBehaviour:
   water: {fileID: 1815099364}
   controller: {fileID: 1078367325}
   isInWater: 0
+  b: {fileID: 1136714927}
 --- !u!1 &713403248
 GameObject:
   m_ObjectHideFlags: 0
@@ -31733,7 +31746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &829897728
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32292,7 +32305,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.534
+  m_Volume: 0.21
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -32394,8 +32407,8 @@ MonoBehaviour:
   target2: {fileID: 2010186283}
   open: 0
   speed: 3
-  doorOpen: {fileID: 8300000, guid: 2811620532afe9d4e845771e3bfaccc5, type: 3}
-  doorClose: {fileID: 8300000, guid: 560d316cbd4dc9d448f2bab20f48d67c, type: 3}
+  doorOpen: {fileID: 8300000, guid: e252b11f6e5920b4ea5b0fa6477279f0, type: 3}
+  doorClose: {fileID: 8300000, guid: e252b11f6e5920b4ea5b0fa6477279f0, type: 3}
 --- !u!65 &839243335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50312,15 +50325,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d06582fc8e311644a92e6d9e9cab273, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.041
+      value: 187.77
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d06582fc8e311644a92e6d9e9cab273, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.965
+      value: 4.76
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d06582fc8e311644a92e6d9e9cab273, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.352
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d06582fc8e311644a92e6d9e9cab273, type: 3}
       propertyPath: m_LocalRotation.x
@@ -55543,6 +55556,7 @@ MonoBehaviour:
   ally: {fileID: 611312507}
   ennemy: {fileID: 1697045600}
   help: {fileID: 8300000, guid: aec5e0907549b49479ca36b0a63dbed0, type: 3}
+  col: {fileID: 1538026572}
 --- !u!82 &1538026575
 AudioSource:
   m_ObjectHideFlags: 0
@@ -73936,8 +73950,8 @@ MonoBehaviour:
   target2: {fileID: 1430889524}
   open: 0
   speed: 3
-  doorOpen: {fileID: 8300000, guid: 2811620532afe9d4e845771e3bfaccc5, type: 3}
-  doorClose: {fileID: 8300000, guid: 560d316cbd4dc9d448f2bab20f48d67c, type: 3}
+  doorOpen: {fileID: 8300000, guid: e252b11f6e5920b4ea5b0fa6477279f0, type: 3}
+  doorClose: {fileID: 8300000, guid: e252b11f6e5920b4ea5b0fa6477279f0, type: 3}
 --- !u!82 &2121911100
 AudioSource:
   m_ObjectHideFlags: 0
@@ -73950,7 +73964,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.534
+  m_Volume: 0.21
   m_Pitch: 1
   Loop: 0
   Mute: 0

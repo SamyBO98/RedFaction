@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
     public bool automatic;
     public float buttonPressed;
     public GameObject fireShot;
+    public bool test;
 
     private void Start()
     {
@@ -36,6 +37,7 @@ public class Bullet : MonoBehaviour
         //tirer sans coup par coup
         if(Input.GetButton("Fire1") && Time.time> fireCoolDown)
         {
+            test = true;
             //Debug.Log(maxClip - clip);
             if (clip >= 1)
             {

@@ -7,7 +7,7 @@ public class UnderWater : MonoBehaviour
     public GameObject water;
     public UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
     public bool isInWater;
-    public bool canSwim;
+    public Bullet b;
 
 
     private void OnTriggerEnter(Collider other)
@@ -16,9 +16,55 @@ public class UnderWater : MonoBehaviour
         {
             water.SetActive(true);
             isInWater = true;
+            controller.m_JumpSpeed = 3;
+            controller.m_RunSpeed = 4;
+            controller.m_WalkSpeed = 3;
+            controller.m_GravityMultiplier = 0.5f;
             
             
             
+        }
+        if (other.gameObject.tag == "PlayerHead" && b.test == true)
+        {
+            water.SetActive(true);
+            isInWater = true;
+            controller.m_JumpSpeed = 3;
+            controller.m_RunSpeed = 4;
+            controller.m_WalkSpeed = 3;
+            controller.m_GravityMultiplier = 0.5f;
+
+
+
+        }
+
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerHead")
+        {
+            //water.SetActive(true);
+            isInWater = true;
+            controller.m_JumpSpeed = 3;
+            controller.m_RunSpeed = 4;
+            controller.m_WalkSpeed = 3;
+            controller.m_GravityMultiplier = 0.5f;
+
+
+
+        }
+        if (other.gameObject.tag == "PlayerHead" && b.test == true)
+        {
+            water.SetActive(true);
+            isInWater = true;
+            controller.m_JumpSpeed = 3;
+            controller.m_RunSpeed = 4;
+            controller.m_WalkSpeed = 3;
+            controller.m_GravityMultiplier = 0.5f;
+
+
+
         }
     }
 
@@ -26,5 +72,9 @@ public class UnderWater : MonoBehaviour
     {
         water.SetActive(false);
         isInWater = false;
+        controller.m_JumpSpeed = 8;
+        controller.m_GravityMultiplier = 2;
+        controller.m_WalkSpeed = 4;
+        controller.m_RunSpeed = 8;
     }
 }
