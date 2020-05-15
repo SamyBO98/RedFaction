@@ -25,6 +25,7 @@ public class Bullet : MonoBehaviour
     public float buttonPressed;
     public GameObject fireShot;
     public bool test;
+    public UnderWater uw;
 
     private void Start()
     {
@@ -34,28 +35,31 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         
-        //tirer sans coup par coup
-        if(Input.GetButton("Fire1") && Time.time> fireCoolDown)
+        if(uw.isInWater == false)
         {
-            test = true;
-            //Debug.Log(maxClip - clip);
-            if (clip >= 1)
+            if (Input.GetButton("Fire1") && Time.time > fireCoolDown)
             {
-                Instantiate(fireShot, silenceWeapon.transform.position, silenceWeapon.transform.rotation);
-                fireCoolDown = Time.time + fireRate;
-                bullet = Instantiate(bulletCasing, transform.position, transform.rotation);
-                clip -= 1;
-                if (silence == false)
+                test = true;
+                //Debug.Log(maxClip - clip);
+                if (clip >= 1)
                 {
-                    GetComponent<AudioSource>().PlayOneShot(shotSound);
+                    Instantiate(fireShot, silenceWeapon.transform.position, silenceWeapon.transform.rotation);
+                    fireCoolDown = Time.time + fireRate;
+                    bullet = Instantiate(bulletCasing, transform.position, transform.rotation);
+                    clip -= 1;
+                    if (silence == false)
+                    {
+                        GetComponent<AudioSource>().PlayOneShot(shotSound);
+                    }
+                    else
+                    {
+                        GetComponent<AudioSource>().PlayOneShot(silenceSound);
+                    }
+                    bullet.velocity = transform.TransformDirection(Vector3.left * ejectSpeed);
                 }
-                else
-                {
-                    GetComponent<AudioSource>().PlayOneShot(silenceSound);
-                }
-                bullet.velocity = transform.TransformDirection(Vector3.left * ejectSpeed);
             }
         }
+       
 
 
         if (Input.GetKeyDown("v") && automatic == true)

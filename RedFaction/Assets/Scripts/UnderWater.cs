@@ -8,12 +8,14 @@ public class UnderWater : MonoBehaviour
     public UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
     public bool isInWater;
     public Bullet b;
+    public AudioClip waterSound;
 
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "PlayerHead")
         {
+            GetComponent<AudioSource>().PlayOneShot(waterSound);
             water.SetActive(true);
             isInWater = true;
             controller.m_JumpSpeed = 3;
