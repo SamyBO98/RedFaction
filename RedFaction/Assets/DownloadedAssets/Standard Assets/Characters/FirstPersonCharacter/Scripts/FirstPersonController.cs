@@ -43,6 +43,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        public bool test;
+        private bool doublejumppossible;
+        private bool multipleJump;
+        private bool prevjumped;
 
         // Use this for initialization
         private void Start()
@@ -57,18 +61,28 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            prevjumped = false;
         }
 
 
         // Update is called once per frame
         private void Update()
         {
+            doublejumppossible = true;
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
+            if(uw.isInWater == true)
+            {
+                if (doublejumppossible == true && prevjumped == true)
+                {
+                    multipleJump = CrossPlatformInputManager.GetButtonDown("Jump");
+                }
+            }
+
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {
@@ -87,6 +101,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+            if (m_CharacterController.isGrounded)
+            {
+                doublejumppossible = true;
+                prevjumped = false;
+            }
         }
 
 
@@ -118,6 +137,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
+            if (multipleJump == true)
+            {
+                m_MoveDir.y = m_JumpSpeed;
+                m_Jump = false;
+                m_Jumping = true;
+                doublejumppossible = false;
+                multipleJump = false;
+            }
 
             if (m_CharacterController.isGrounded)
             {
@@ -125,15 +152,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 if (m_Jump)
                 {
+                    
                     m_MoveDir.y = m_JumpSpeed;
                     PlayJumpSound();
                     m_Jump = false;
                     m_Jumping = true;
+                    prevjumped = true;
                 }
+                
             }
             else
             {
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
+                
             }
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
@@ -178,18 +209,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             if(uw.isInWater == false)
             {
-                if (!m_CharacterController.isGrounded)
-                {
-                    return;
-                }
-                // pick & play a random footstep sound from the array,
-                // excluding sound at index 0
-                int n = Random.Range(1, m_FootstepSounds.Length);
-                m_AudioSource.clip = m_FootstepSounds[n];
-                m_AudioSource.PlayOneShot(m_AudioSource.clip);
-                // move picked sound to index 0 so it's not picked next time
-                m_FootstepSounds[n] = m_FootstepSounds[0];
-                m_FootstepSounds[0] = m_AudioSource.clip;
+                 if (!m_CharacterController.isGrounded)
+            {
+                return;
+            }
+            // pick & play a random footstep sound from the array,
+            // excluding sound at index 0
+            int n = Random.Range(1, m_FootstepSounds.Length);
+            m_AudioSource.clip = m_FootstepSounds[n];
+            m_AudioSource.PlayOneShot(m_AudioSource.clip);
+            // move picked sound to index 0 so it's not picked next time
+            m_FootstepSounds[n] = m_FootstepSounds[0];
+            m_FootstepSounds[0] = m_AudioSource.clip;
             }
            
         }
