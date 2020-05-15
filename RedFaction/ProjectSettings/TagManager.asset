@@ -17,6 +17,7 @@ TagManager:
   - Eject1
   - BloodScreen
   - Explode
+  - Throw
   layers:
   - Default
   - TransparentFX
