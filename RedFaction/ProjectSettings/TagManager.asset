@@ -18,6 +18,7 @@ TagManager:
   - BloodScreen
   - Explode
   - Throw
+  - PlayerHead
   layers:
   - Default
   - TransparentFX
