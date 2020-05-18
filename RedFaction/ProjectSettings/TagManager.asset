@@ -30,8 +30,8 @@ TagManager:
   - 
   - PostProcessing
   - DrawAlways
-  - 
-  - 
+  - Walkable
+  - UnWalkable
   - 
   - 
   - 
