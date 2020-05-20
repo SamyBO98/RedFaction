@@ -15,7 +15,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        audio1.Play();
+        //audio1.Play();
     }
 
     private void Update()

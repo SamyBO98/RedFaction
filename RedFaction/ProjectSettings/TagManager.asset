@@ -28,12 +28,12 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - DrawAlways
-  - Walkable
-  - UnWalkable
-  - Road
-  - Grass
+  - Unwalkable
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
