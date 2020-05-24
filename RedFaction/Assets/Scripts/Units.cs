@@ -5,13 +5,43 @@ using UnityEngine;
 public class Units : MonoBehaviour
 {
     public Transform target;
-    float speed = 10f;
+    float speed = 2f;
+    public float distance;
+    public float rangeAttack;
     Vector3[] path;
     int targetIndex;
+    public int test;
+
 
     private void Start()
     {
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+    }
+
+    private void Update()
+    {
+        rangeAttack = Vector3.Distance(transform.position, target.position);
+        distance = Vector3.Distance(target.position, transform.position);
+        if(distance < 50)
+        {
+            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+            speed = 2f;
+        }
+        else
+        {
+            speed = 0;
+        }
+
+        if(rangeAttack < 10)
+        {
+            speed = 0;
+        }
+        else
+        {
+            speed = 2f;
+        }
+        // PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -26,16 +56,21 @@ public class Units : MonoBehaviour
 
     IEnumerator FollowPath()
     {
+        if (path.Length == 0)
+            yield break;
         Vector3 currentWaypoint = path[0];
+        targetIndex = 0;
 
         while (true)
         {
             if(transform.position == currentWaypoint)
             {
+                Debug.Log("test");
                 targetIndex++;
-                if(targetIndex >= path.Length)
+                if (targetIndex >= path.Length)
                 {
-                    //Finish follow path
+                    targetIndex = 0;
+                    path = new Vector3[0];
                     yield break;
                 }
                 currentWaypoint = path[targetIndex];
