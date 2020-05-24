@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GridAStar : MonoBehaviour
 {
-    public bool onlyDisplay;
+    public bool displayGridGizmos;
     Node[,] grid;
     public Vector3 gridWorldSize;
     public float nodeRadius;
@@ -15,7 +15,7 @@ public class GridAStar : MonoBehaviour
     int gridSizeX;
     int gridSizeY;
 
-    private void Start()
+    private void Awake()
     {
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
@@ -83,36 +83,21 @@ public class GridAStar : MonoBehaviour
         return grid[x, y];
     }
 
-    public List<Node> path;
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
-        if (onlyDisplay)
-        {
-            if(path != null)
-            {
-                foreach(Node n in path)
-                {
-                    Gizmos.color = Color.black;
-                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
-                }
-            }
-        }
-        else
-        {
-            if (grid != null)
+            if (grid != null && displayGridGizmos)
             {
                 foreach (Node n in grid)
                 {
-                    Node playerNode = NodeFromWorldPoint(player.position);
+                    
                     Gizmos.color = (n.walkable) ? Color.white : Color.red;
-                    if (path != null)
-                        if (path.Contains(n))
-                            Gizmos.color = Color.black;
                     Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
+               
+               
                 }
             }
-        }
+        
        
     }
 }
