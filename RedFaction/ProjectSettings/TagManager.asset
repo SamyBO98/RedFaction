@@ -19,6 +19,8 @@ TagManager:
   - Explode
   - Throw
   - PlayerHead
+  - Fire
+  - Unwalkable
   layers:
   - Default
   - TransparentFX
