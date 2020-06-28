@@ -29,6 +29,7 @@ public class Units : MonoBehaviour
         }
         else
         {
+            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
             speed = 0;
         }
 

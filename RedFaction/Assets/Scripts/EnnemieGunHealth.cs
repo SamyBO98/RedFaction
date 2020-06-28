@@ -15,7 +15,7 @@ public class EnnemieGunHealth : MonoBehaviour
     public int randArmorAppear;
     public bool isDead;
     public Collider damages;
-    public GameObject blood;
+    //public GameObject blood;
 
     private void Start()
     {
@@ -35,7 +35,7 @@ public class EnnemieGunHealth : MonoBehaviour
         //Debug.Log(ennemieHealth);
         if (ennemieHealth <= 0)
         {
-            blood.SetActive(false);
+            //blood.SetActive(false);
             isDead = true;
             //Debug.Log(randHealthAppear);
             //Debug.Log(randAmmoAppear);

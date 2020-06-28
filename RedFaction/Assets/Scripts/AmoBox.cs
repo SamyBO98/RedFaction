@@ -13,7 +13,13 @@ public class AmoBox : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        wip = GameObject.Find("Gun").GetComponent<WeaponInventoryPistol>();
+        if(wip != null)
+        {
+            wip = GameObject.Find("Gun").GetComponent<WeaponInventoryPistol>();
+        }
+            
+        
+        
 
     }
 
